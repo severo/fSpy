@@ -83,7 +83,7 @@
     },
     "verticalFieldOfView": {
       "title": "Vertical field of view",
-      "description": "The image height expressed in radians. The principal point corresponds to `0` radians, and the image top is `-verticalFieldOfView/2` radians while the image bottom is `verticalFieldOfView/2` radians. Note that the aspect ratio between horizontalFieldOfView and verticalFieldOfView is the same as between imageWidth and imageHeight.",
+      "description": "The image height expressed in radians. The principal point corresponds to `0` radians, and the image top is `-verticalFieldOfView/2` radians while the image bottom is `verticalFieldOfView/2` radians.",
       "type": "number",
       "minimum": 0,
       "maximum": 6.283185307179586,
