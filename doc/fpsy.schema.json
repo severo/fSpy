@@ -1,11 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft/2019-09/schema#",
   "title": "fSpy camera parameters",
-  "description": `Camera parameters exported by the fSpy application
-
-> Camera matching, or camera calibration, is the process of estimating camera parameters from certain features in an image. fSpy computes the approximate focal length, orientation and position of the camera in 3D space based on user defined control points in still images. The computed camera parameters can be used in other apps, for example 3D modeling tools.
-
-Read more at https://fspy.io/basics/.`,
+  "description": "Camera parameters exported by the fSpy application\n\n> Camera matching, or camera calibration, is the process of estimating camera parameters from certain features in an image. fSpy computes the approximate focal length, orientation and position of the camera in 3D space based on user defined control points in still images. The computed camera parameters can be used in other apps, for example 3D modeling tools.\n\nRead more at https://fspy.io/basics/.",
   "type": "object",
   "properties": {
     "cameraTransform": {
@@ -24,19 +20,15 @@ Read more at https://fspy.io/basics/.`,
             "items": {
               "title": "Matrix cell",
               "description": "A matrix cell",
-              "type": "number",
-              "examples": [parameters.cameraTransform.rows[0][0]]
+              "type": "number"
             },
             "minItems": 4,
-            "maxItems": 4,
-            "examples": [parameters.cameraTransform.rows[0]]
+            "maxItems": 4
           },
           "minItems": 4,
-          "maxItems": 4,
-          "examples": [parameters.cameraTransform.rows]
+          "maxItems": 4
         }
-      },
-      "examples": [parameters.cameraTransform]
+      }
     },
     "imageWidth": {
       "title": "Image width",
@@ -54,11 +46,7 @@ Read more at https://fspy.io/basics/.`,
     },
     "principalPoint": {
       "title": "Principal point",
-      "description": `> Imagine a ray going straight through the middle of a camera’s lens. The point where this ray hits the sensor (or film) is the principal point. This point usually coincides with the midpoint of the image. In some cases, for example if an image has been asymmetrically cropped, the principal point might be somewhere else.
-
-See more at https://fspy.io/tutorial/#principal-point.
-
-It corresponds to a point in the image : -1 corresponds to the left or top, 0 corresponds to the middle, while 1 corresponds to the right or bottom.`,
+      "description": "> Imagine a ray going straight through the middle of a camera’s lens. The point where this ray hits the sensor (or film) is the principal point. This point usually coincides with the midpoint of the image. In some cases, for example if an image has been asymmetrically cropped, the principal point might be somewhere else.\n\nSee more at https://fspy.io/tutorial/#principal-point.\n\nIt corresponds to a point in the image : -1 corresponds to the left or top, 0 corresponds to the middle, while 1 corresponds to the right or bottom.",
       "type": "object",
       "properties": {
         "x": {
@@ -90,7 +78,7 @@ It corresponds to a point in the image : -1 corresponds to the left or top, 0 co
       "description": "The image width expressed in radians. The principal point corresponds to `0` radians, and the image left is `-horizontalFieldOfView/2` radians while the image right is `horizontalFieldOfView/2` radians",
       "type": "number",
       "minimum": 0,
-      "maximum": 2 * Math.PI,
+      "maximum": 6.283185307179586,
       "examples": [0.8375612336460386]
     },
     "verticalFieldOfView": {
@@ -98,7 +86,7 @@ It corresponds to a point in the image : -1 corresponds to the left or top, 0 co
       "description": "The image height expressed in radians. The principal point corresponds to `0` radians, and the image top is `-verticalFieldOfView/2` radians while the image bottom is `verticalFieldOfView/2` radians. Note that the aspect ratio between horizontalFieldOfView and verticalFieldOfView is the same as between imageWidth and imageHeight.",
       "type": "number",
       "minimum": 0,
-      "maximum": 2 * Math.PI,
+      "maximum": 6.283185307179586,
       "examples": [0.5769275399457996]
     }
   },
@@ -114,6 +102,5 @@ It corresponds to a point in the image : -1 corresponds to the left or top, 0 co
     "vanishingPoints",
     "verticalFieldOfView",
     "viewTransform"
-  ],
-  "examples": [parameters]
+  ]
 }
